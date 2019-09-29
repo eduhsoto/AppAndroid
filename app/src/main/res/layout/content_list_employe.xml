@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListEmployee">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ListEmploye"
+    tools:showIn="@layout/activity_list_employe">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
