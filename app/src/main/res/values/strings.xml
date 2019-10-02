@@ -20,5 +20,5 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="title_activity_listemploye">Listemploye</string>
-    <string name="title_activity_list_employe">ListEmploye</string>
+    <string name="title_activity_list_employe">Listado de Clientes</string>
 </resources>
