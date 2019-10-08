@@ -25,32 +25,35 @@
         android:id="@+id/user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:counterEnabled="true"
-        app:counterMaxLength="8"
         >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/user"
             android:hint="@string/User"
             android:inputType="text"
-            app:counterEnabled="true" />
+            app:counterEnabled="true"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/user" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:passwordToggleEnabled="true"
-        >
+        android:layout_marginTop="20dp"
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/pass"
+            android:drawableLeft="@drawable/pass"
+            android:drawablePadding="10dp"
             android:hint="@string/password"
             android:inputType="textPassword"
-            app:counterEnabled="true"
-             />
+            app:counterEnabled="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
 <!--<EditText
@@ -75,7 +78,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_rounded"
         android:text="Ingresar"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="65dp"
         android:textColor="@android:color/background_light" />
 
 </LinearLayout>
