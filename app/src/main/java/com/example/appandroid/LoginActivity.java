@@ -3,13 +3,10 @@ package com.example.appandroid;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.content.Intent;
 import android.widget.Toast;
 
@@ -23,6 +20,9 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputLayout;
 
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,7 +35,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
-
         btnLogin = findViewById(R.id.btnIngresar);
         user = findViewById(R.id.user);
         password = findViewById(R.id.password);
@@ -52,7 +51,11 @@ public class LoginActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
+                try{
+                    JSONObject jsonObject = new JSONObject(response);
+                }catch (JSONException e){
+                    e.printStackTrace();
+                }
                 if (!response.isEmpty()){
                     Intent intent = new Intent(getApplicationContext(),ListEmploye.class);
                     startActivity(intent);
