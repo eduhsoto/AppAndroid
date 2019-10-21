@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AppAndroid</string>
+    <string name="app_name">MTTech</string>
     <string name="action_settings">Settings</string>
     <string name="User">Usuario</string>
     <string name="password" translatable="false">Contraseña</string>
