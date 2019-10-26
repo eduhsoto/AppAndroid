@@ -30,15 +30,23 @@ public class LoginActivity extends AppCompatActivity {
 
     Button btnLogin;
     TextInputLayout user, password;
+    String username, passworduser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
+
+        //llamando a los id del login_activity
         btnLogin = findViewById(R.id.btnIngresar);
         user = findViewById(R.id.user);
         password = findViewById(R.id.password);
 
+        //obteniendo el valor de los edittext
+         username =  user.getEditText().getText().toString();
+         passworduser =  password.getEditText().getText().toString();
+
+        //ruta del servidor remoto donde se encuentra el archivo
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +60,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 try{
-                    JSONObject jsonObject = new JSONObject(response);
+                    if (username.equals("") || passworduser.equals("")){
+                        Toast.makeText(LoginActivity.this, "Llene todos los campos", Toast.LENGTH_SHORT);
+                    }else{
+                        JSONObject jsonObject = new JSONObject(response);
+                    }
+
+
                 }catch (JSONException e){
                     e.printStackTrace();
                 }
@@ -72,8 +86,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> parametros = new HashMap<String,String>();
-                parametros.put("usuario", user.getEditText().getText().toString());
-                parametros.put("password", password.getEditText().getText().toString());
+                parametros.put("usuario", username);
+                parametros.put("password", passworduser);
                 return parametros;
             }
         };
